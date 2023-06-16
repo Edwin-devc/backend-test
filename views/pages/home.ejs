@@ -1,0 +1,48 @@
+    <%- include('../partials/header'); %>
+    
+    <div class="container">
+        <div class="mb-1 mt-4 left">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Users</h4>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="/adduser" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg"> </i>Add User</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="my-3">
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr class="table-dark">
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Comment</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i=0; i<rows.length; i++) { %>
+                    <tr>
+                        <td><%= rows[i].Id %></td>
+                        <td><%= rows[i].firstname %></td>
+                        <td><%= rows[i].lastname %></td>
+                        <td><%= rows[i].email %></td>
+                        <td><%= rows[i].contact %></td>
+                        <td><%= rows[i].comment %></td>
+                        <td class="text-center">
+                            <a href="/viewuser/<%= rows[i].Id %>" class="btn btn-sm btn-light btn-outline-primary"><i class="bi bi-eye"> </i>View</a>
+                            <a href="/edituser/<%= rows[i].Id %>" class="btn btn-sm btn-light btn-outline-secondary"><i class="bi bi-pencil-square"> </i>Edit</a>
+                            <a href="/deleteuser/<%= rows[i].Id %>" class="btn btn-sm btn-light btn-outline-danger"><i class="bi bi-trash"> </i>Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<%- include('../partials/footer'); %>

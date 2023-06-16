@@ -1,0 +1,31 @@
+<%- include('../partials/header'); %>
+    <div class="container">
+        <div class="mt-5 m-auto w-75">
+            <form class="row g-3" method="post" action="/adduser">
+                <div class="col-md-6">
+                    <label for="firstname" class="form-label">First Name:</label>
+                    <input type="text" class="form-control form-control-sm" id="firstname" name="firstname">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control form-control-sm" id="lastname" name="lastname">
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="example@email.com">
+                </div>
+                <div class="col-12">
+                    <label for="contact" class="form-label">Contact:</label>
+                    <input type="text" class="form-control form-control-sm" id="contact" name="contact">
+                </div>
+                <div class="col-12">
+                    <label for="comment" class="form-label">Comment:</label>
+                    <textarea name="comment" id="comment" class="form-control" cols="30" rows="4"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('../partials/footer'); %>
